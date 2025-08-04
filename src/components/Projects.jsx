@@ -257,7 +257,7 @@ export default function Projects() {
 
         <Project>
           <div className="img-wrapper">
-            <img src="/public/calacApp.jpeg" alt="Calc App" />
+            <img src="/calacApp.jpeg" alt="Calc App" />
           </div>
           <div className="content">
             <div className="info">
@@ -323,7 +323,7 @@ export default function Projects() {
 
         <Project>
           <div className="img-wrapper">
-            <img src="/public/CheckWord.jpeg" alt="Guess The Word" />
+            <img src="CheckWord.jpeg" alt="Guess The Word" />
           </div>
           <div className="content">
             <div className="info">

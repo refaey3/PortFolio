@@ -8,9 +8,8 @@ const NavBar = styled("nav")`
   justify-content: space-between;
   align-items: baseline;
   padding: 20px 40px;
+  position: relative;
   z-index: 1000;
-
-
 
   @keyframes fadeInax {
     from {
