@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Container from "./Container";
+import emailjs from "emailjs-com";
+
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const FooterContainer = styled("div")`
@@ -339,15 +341,41 @@ export default function Footer() {
             <span>Get in touch</span>
             Contact.
           </Title>
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              emailjs
+                .sendForm(
+                  "service_rxd0qa8",
+                  "template_lw461g5",
+                  e.target,
+                  "LL8cJsZOkmjJg5J79"
+                )
+                .then(() => {
+                  alert("Message sent!");
+                  e.target.reset();
+                })
+                .catch((error) => {
+                  console.error("Error sending message:", error);
+                });
+            }}
+          >
             <Label>Your Name</Label>
-            <Input type="text" placeholder="What's your name?" />
+            <Input
+              type="text"
+              name="user_name"
+              placeholder="What's your name?"
+            />
 
             <Label>Your Email</Label>
-            <Input type="email" placeholder="What's your email?" />
+            <Input
+              type="email"
+              name="user_email"
+              placeholder="What's your email?"
+            />
 
             <Label>Your Message</Label>
-            <TextArea placeholder="What do you want to say?" />
+            <TextArea name="message" placeholder="What do you want to say?" />
 
             <Button type="submit">Send</Button>
           </form>
