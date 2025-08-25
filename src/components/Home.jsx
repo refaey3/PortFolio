@@ -252,7 +252,7 @@ export default function Home() {
               <CVLink>
                 <button className="button type1">
                   <a
-                    href="/Mostafa_ElRefaey_CV.docx"
+                    href="/MostafaElrefaey_CV.docx"
                     download
                     className="btn-txt"
                   >
