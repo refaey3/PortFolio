@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Container from "./Container";
 import { FaHtml5, FaCss3, FaJs, FaBootstrap, FaReact } from "react-icons/fa";
-import { SiVite } from "react-icons/si";
+import { SiVite, SiFirebase } from "react-icons/si";
 const ProjectContainer = styled("div")`
   .continer {
     display: grid;
@@ -236,8 +236,77 @@ export default function Projects() {
                   />
                 </svg>
               </LinkButton>
+              <LinkButton href="https://islam-life.vercel.app/" target="_blank">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                    fill="#e2e8f0"
+                  />
+                </svg>
+              </LinkButton>
+            </Links>
+          </div>
+        </Project>
+        <Project>
+          <div className="img-wrapper">
+            <img src="/ChatApp.png" alt="Chat App" />
+          </div>
+          <div className="content">
+            <div className="info">
+              <h3>Chat App</h3>
+              <p>
+                Real-time chat application with authentication and user presence
+                tracking.
+              </p>
+            </div>
+            <div className="icons">
+              <FaCss3 style={{ color: "#1572B6" }} />
+              <FaJs style={{ color: "#F7DF1E" }} />
+              <FaReact style={{ color: "#61DAFB" }} />
+              <SiVite style={{ color: "#646CFF" }} />
+              <SiFirebase style={{ color: "#FFCA28" }} />
+            </div>
+            <div className="adv">
+              <p> React – Functional components & Hooks</p>
+              <p> useState + useEffect – Dynamic UI updates</p>
+              <p> react-router-dom – Multi-page navigation</p>
+              <p> styled-components – Clean, responsive styling</p>
+              <p> Firebase Authentication – Secure login system</p>
+              <p> Firestore Database – Real-time message syncing</p>
+              <p> Online/Offline user status tracking</p>
+              <p> Last message preview in chat list</p>
+              <p> Smooth scrolling and auto-scroll to latest message</p>
+              <p> Emoji picker integration</p>
+              <p> Toast notifications – Instant feedback</p>
+              <p> Responsive layout – Works perfectly on all devices</p>
+            </div>
+            <Hr />
+            <Links>
               <LinkButton
-                href="https://islam-life.vercel.app/"
+                href="https://github.com/refaey3/ChatApp"
+                target="_blank"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.55 11.13C3.19 11.13 3.55 11.59 3.68 11.86C4.36 12.54 5.21 12.35 5.61 12.14C5.74 11.53 6.05 11.13 6.39 10.92C4.98 10.71 3.53 10.13 3.53 7.61C3.53 6.84 3.74 6.22 4.11 5.71C4 5.53 3.78 4.93 4.17 3.84C4.17 3.84 4.71 3.61 5.61 4.41C6.18 4.25 6.79 4.17 7.4 4.17C8.01 4.17 8.62 4.25 9.19 4.41C10.09 3.61 10.63 3.84 10.63 3.84C11.02 4.93 10.8 5.53 10.69 5.71C11.06 6.22 11.27 6.84 11.27 7.61C11.27 10.13 9.8 10.71 8.39 10.92C8.76 11.16 9.02 11.62 9.02 12.36C9.02 13.27 9.01 14.03 9.01 14.21C9.01 14.42 9.16 15.66 9.56 15.59C12.74 14.53 15 11.54 15 8C15 3.58 11.42 0 7 0C8 0 8 0 8 0Z"
+                    fill="#e2e8f0"
+                  />
+                </svg>
+              </LinkButton>
+              <LinkButton
+                href="https://chat-app-liard-two.vercel.app/"
                 target="_blank"
               >
                 <svg
@@ -256,6 +325,7 @@ export default function Projects() {
             </Links>
           </div>
         </Project>
+
         <Project>
           <div className="img-wrapper">
             <img src="/DayPlanner.jpeg" alt="Day Planner" />
@@ -327,72 +397,7 @@ export default function Projects() {
           </div>
         </Project>
 
-        <Project>
-          <div className="img-wrapper">
-            <img src="/calacApp.jpeg" alt="Calc App" />
-          </div>
-          <div className="content">
-            <div className="info">
-              <h3>Calc App</h3>
-              <p>
-                A feature-rich calculator app with real-time calculations and
-                user-friendly interface.
-              </p>
-            </div>
-            <div className="icons">
-              <FaHtml5 style={{ color: "#E34F26" }} />
-              <FaCss3 style={{ color: "#1572B6" }} />
-              <FaJs style={{ color: "#F7DF1E" }} />
-            </div>
-            <div className="adv">
-              <p>HTML – Structured layout</p>
-              <p>CSS – Custom styling</p>
-              <p>JavaScript – Dynamic calculations</p>
-              <p>Basic arithmetic operations</p>
-              <p>Advanced calculations</p>
-              <p>History of calculations</p>
-              <p>Responsive design</p>
-            </div>
-            <Hr />
-            <Links>
-              <LinkButton
-                href="https://github.com/refaey3/Calc_App"
-                target="_blank"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.55 11.13C3.19 11.13 3.55 11.59 3.68 11.86C4.36 12.54 5.21 12.35 5.61 12.14C5.74 11.53 6.05 11.13 6.39 10.92C4.98 10.71 3.53 10.13 3.53 7.61C3.53 6.84 3.74 6.22 4.11 5.71C4 5.53 3.78 4.93 4.17 3.84C4.17 3.84 4.71 3.61 5.61 4.41C6.18 4.25 6.79 4.17 7.4 4.17C8.01 4.17 8.62 4.25 9.19 4.41C10.09 3.61 10.63 3.84 10.63 3.84C11.02 4.93 10.8 5.53 10.69 5.71C11.06 6.22 11.27 6.84 11.27 7.61C11.27 10.13 9.8 10.71 8.39 10.92C8.76 11.16 9.02 11.62 9.02 12.36C9.02 13.27 9.01 14.03 9.01 14.21C9.01 14.42 9.16 15.66 9.56 15.59C12.74 14.53 15 11.54 15 8C15 3.58 11.42 0 7 0C8 0 8 0 8 0Z"
-                    fill="#e2e8f0"
-                  />
-                </svg>
-              </LinkButton>
-              <LinkButton
-                href="https://refaey3.github.io/Calc_App/"
-                target="_blank"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
-                    fill="#e2e8f0"
-                  />
-                </svg>
-              </LinkButton>
-            </Links>
-          </div>
-        </Project>
-
+        
         <Project>
           <div className="img-wrapper">
             <img src="CheckWord.jpeg" alt="Guess The Word" />
@@ -458,6 +463,7 @@ export default function Projects() {
             </Links>
           </div>
         </Project>
+
         <Project>
           <div className="img-wrapper">
             <img src="/GameZone.jpeg" alt="Game Zone" />
@@ -525,6 +531,7 @@ export default function Projects() {
             </Links>
           </div>
         </Project>
+
         <Project>
           <div className="img-wrapper">
             <img src="/WeatherApp.jpeg" alt="WeatherApp" />
