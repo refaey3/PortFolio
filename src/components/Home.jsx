@@ -210,8 +210,8 @@ const CVLink = styled.div`
 export default function Home() {
   const downloadCv = () => {
     const link = document.createElement("a");
-    link.href = "/MostafaElrefaey_CV.pdf";
-    link.download = "MostafaElrefaey_CV.pdf";
+    link.href = "/MostafaElrefaey_CV_FrontEnd_Developer.pdf";
+    link.download = "MostafaElrefaey_CV_FrontEnd_Developer.pdf";
     link.click();
   };
   return (
