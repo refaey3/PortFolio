@@ -101,6 +101,43 @@ const Info = styled("div")`
     }
   }
 `;
+
+const StatusBadge = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 255, 224, 0.06);
+  border: 1px solid rgba(0, 255, 224, 0.2);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #00ffe0;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ffe0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  a {
+    color: #00ffe0;
+    text-decoration: none;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+`;
 const CvAndLinks = styled("div")`
   display: flex;
   justify-content: center;
@@ -220,10 +257,15 @@ export default function Home() {
         <Navbar />
         <Cont>
           <Info>
+            <StatusBadge>
+              <span className="dot" />
+              Currently @{" "}
+              <a href="https://baridx.com/" target="_blank" rel="noopener noreferrer">BaridX</a>
+            </StatusBadge>
             <h1>Hi, I'm Mostafa Elrefaey</h1>
             <h2>
               <Typewriter
-                words={["Frontend Developer", "Software Engineer"]}
+                words={["Frontend Developer", "Vue.js Developer", "Software Engineer"]}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -233,8 +275,9 @@ export default function Home() {
               />
             </h2>
             <p>
-              A Front-End Developer passionate about creating interactive and
-              user-friendly web interfaces. Let's build something amazing!
+              A Frontend Developer at BaridX, building enterprise logistics
+              platforms with Vue.js & Nuxt.js. Passionate about creating
+              interactive, scalable, and user-friendly web interfaces.
             </p>
             <CvAndLinks>
               <SocialLinks>

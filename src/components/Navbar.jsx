@@ -7,9 +7,18 @@ const NavBar = styled("nav")`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 20px 40px;
-  position: relative;
+  padding: ${({ $scrolled }) => ($scrolled ? "12px 40px" : "20px 40px")};
+  position: ${({ $scrolled }) => ($scrolled ? "fixed" : "relative")};
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  background: ${({ $scrolled }) =>
+    $scrolled ? "rgba(18, 18, 18, 0.85)" : "transparent"};
+  backdrop-filter: ${({ $scrolled }) => ($scrolled ? "blur(12px)" : "none")};
+  border-bottom: ${({ $scrolled }) =>
+    $scrolled ? "1px solid rgba(0, 255, 224, 0.08)" : "none"};
+  transition: all 0.35s ease;
 
   @keyframes fadeInax {
     from {
@@ -47,11 +56,11 @@ const Links = styled("ul")`
     align-items: flex-start;
     padding: 20px 0;
     z-index: 10000;
-    transform: ${({ isOpen }) =>
-      isOpen ? "translateY(0)" : "translateY(-30%)"};
-    opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
-    visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
-    pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
+    transform: ${({ $isOpen }) =>
+      $isOpen ? "translateY(0)" : "translateY(-30%)"};
+    opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
+    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
+    pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
   }
 `;
 const NavLink = styled("a")`
@@ -108,15 +117,15 @@ export default function Navbar() {
   }, []);
   return (
     <>
-      <NavBar scrolled={scrolled}>
+      <NavBar $scrolled={scrolled}>
         <Logo>
           <NavLink href="" className="">
-            Mostafa Elrefay
+            Mostafa Elrefaey
           </NavLink>
         </Logo>
         <Left>
           <MenuButton onClick={() => setIsOpen(!isOpen)}>☰</MenuButton>
-          <Links isOpen={isOpen}>
+          <Links $isOpen={isOpen}>
             <Li>
               <NavLink href="#home" onClick={() => setIsOpen(false)}>
                 Home
@@ -125,6 +134,11 @@ export default function Navbar() {
             <Li>
               <NavLink href="#skills" onClick={() => setIsOpen(false)}>
                 Skills
+              </NavLink>
+            </Li>
+            <Li>
+              <NavLink href="#experience" onClick={() => setIsOpen(false)}>
+                Experience
               </NavLink>
             </Li>
             <Li>

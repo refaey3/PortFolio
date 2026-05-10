@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Inter", "Work Sans", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -18,5 +18,20 @@ ul {
 a {
   text-decoration: none;
   /* display: inline-block; */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffe0, #1e3a8a);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ffe0, #3b82f6);
 }
 

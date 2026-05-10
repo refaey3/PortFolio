@@ -102,11 +102,6 @@ export default function Skills() {
       >
         <SwiperSlide>
           <ImgWrapper>
-            <Img src="/bootstrap-logo.webp" alt="Bootstrap" />
-          </ImgWrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <ImgWrapper>
             <Img src="/css-logo.webp" alt="CSS" />
           </ImgWrapper>
         </SwiperSlide>
@@ -128,6 +123,21 @@ export default function Skills() {
         <SwiperSlide>
           <ImgWrapper>
             <Img src="/react-logo.webp" alt="React" />
+          </ImgWrapper>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ImgWrapper>
+            <Img src="/vue-logo.svg" alt="Vue.js" />
+          </ImgWrapper>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ImgWrapper>
+            <Img src="/nuxt-logo.svg" alt="Nuxt.js" />
+          </ImgWrapper>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ImgWrapper>
+            <Img src="/pinia-logo.svg" alt="Pinia" />
           </ImgWrapper>
         </SwiperSlide>
       </Swiper>

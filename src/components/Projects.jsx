@@ -540,10 +540,8 @@ export default function Projects() {
             <div className="info">
               <h3>Weather App</h3>
               <p>
-                <p>
                   A minimal and responsive weather application that displays
                   real-time data for any city.
-                </p>
               </p>
             </div>
             <div className="icons">
