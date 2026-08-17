@@ -356,14 +356,14 @@ export default function Experience() {
                   BaridX — Last-Mile Delivery & Logistics
                 </CompanyName>
                 <br />
-                <Period>Nov 2025 — Present</Period>
+                <Period>Nov 2025 — Jul 2026</Period>
               </HeaderInfo>
             </CardHeader>
 
             <Description>
-              Working at <strong style={{ color: "#e2e8f0" }}>BaridX</strong>, a
+              Worked at <strong style={{ color: "#e2e8f0" }}>BaridX</strong>, a
               leading Saudi logistics company redefining last-mile delivery
-              through innovation and technology. Building and maintaining
+              through innovation and technology. Built and maintained
               enterprise-grade logistics management platforms using the Vue.js
               ecosystem in a monorepo architecture.
             </Description>

@@ -247,8 +247,8 @@ const CVLink = styled.div`
 export default function Home() {
   const downloadCv = () => {
     const link = document.createElement("a");
-    link.href = "/MostafaElrefaey_CV_FrontEnd_Developer.pdf";
-    link.download = "MostafaElrefaey_CV_FrontEnd_Developer.pdf";
+    link.href = "/Mostafa_Elrefaey_CV_FrontEnd.pdf";
+    link.download = "Mostafa_Elrefaey_CV_FrontEnd.pdf";
     link.click();
   };
   return (
@@ -259,8 +259,7 @@ export default function Home() {
           <Info>
             <StatusBadge>
               <span className="dot" />
-              Currently @{" "}
-              <a href="https://baridx.com/" target="_blank" rel="noopener noreferrer">BaridX</a>
+              Available for new opportunities
             </StatusBadge>
             <h1>Hi, I'm Mostafa Elrefaey</h1>
             <h2>
@@ -275,7 +274,7 @@ export default function Home() {
               />
             </h2>
             <p>
-              A Frontend Developer at BaridX, building enterprise logistics
+              A Frontend Developer experienced in building enterprise logistics
               platforms with Vue.js & Nuxt.js. Passionate about creating
               interactive, scalable, and user-friendly web interfaces.
             </p>

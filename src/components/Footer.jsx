@@ -6,7 +6,8 @@ import emailjs from "emailjs-com";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const FooterContainer = styled("div")`
-  background: #0d285a;
+  background: #0f172a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   @media (max-width: 600px) {
     padding-bottom: 20px;
   }
@@ -70,13 +71,12 @@ const StyledWrapper = styled.div`
   }
 `;
 const FormContainer = styled("div")`
-  background-color: #0f172a;
+  background-color: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   color: white;
   padding: 40px;
   border-radius: 16px;
-  // width: 100%;
   max-width: 400px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 `;
 const Title = styled.h2`
   font-size: 32px;
