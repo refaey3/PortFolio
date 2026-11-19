@@ -134,8 +134,15 @@ const StatusBadge = styled.div`
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(0.8);
+    }
   }
 `;
 const CvAndLinks = styled("div")`
@@ -167,7 +174,9 @@ const Imge = styled("img")`
   height: 500px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 30px rgba(0, 255, 224, 0.4), 0 0 10px rgba(0, 255, 224, 0.2);
+  box-shadow:
+    0 0 30px rgba(0, 255, 224, 0.4),
+    0 0 10px rgba(0, 255, 224, 0.2);
   transition: transform 0.3s ease;
   @media (max-width: 1024px) {
     margin: 0 auto;
@@ -264,7 +273,7 @@ export default function Home() {
             <h1>Hi, I'm Mostafa Elrefaey</h1>
             <h2>
               <Typewriter
-                words={["Frontend Developer", "Vue.js Developer", "Software Engineer"]}
+                words={["Front-End Developer", "Software Engineer"]}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -274,9 +283,11 @@ export default function Home() {
               />
             </h2>
             <p>
-              A Frontend Developer experienced in building enterprise logistics
-              platforms with Vue.js & Nuxt.js. Passionate about creating
-              interactive, scalable, and user-friendly web interfaces.
+              Front-End Developer with production experience building enterprise
+              applications using Vue 3 & Nuxt 4, alongside hands-on expertise in
+              React, Next.js, and TypeScript. Skilled in scalable component
+              libraries, RESTful APIs, and full-stack integration with
+              PostgreSQL & Supabase.
             </p>
             <CvAndLinks>
               <SocialLinks>

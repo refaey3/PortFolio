@@ -97,11 +97,15 @@ const StyledWrapper = styled.div`
 const TimelineItem = styled.div`
   position: relative;
   max-width: 820px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   transform: ${({ $visible }) =>
     $visible ? "translateY(0)" : "translateY(40px)"};
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 /* glowing dot on the timeline */
@@ -142,11 +146,14 @@ const Card = styled.div`
   padding: 36px 32px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 255, 224, 0.1),
+    box-shadow:
+      0 12px 40px rgba(0, 255, 224, 0.1),
       0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
@@ -272,12 +279,58 @@ const Badge = styled.span`
   }
 `;
 
+const BulletList = styled.ul`
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: #cbd5e1;
+  font-size: 14.5px;
+  line-height: 1.7;
 
+  li {
+    margin-bottom: 8px;
+    position: relative;
+
+    &::marker {
+      color: #00ffe0;
+    }
+  }
+`;
+
+const TypeBadge = styled.span`
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  background: ${({ $type }) =>
+    $type === "work"
+      ? "rgba(0, 255, 224, 0.15)"
+      : $type === "training"
+        ? "rgba(14, 165, 233, 0.15)"
+        : "rgba(168, 85, 247, 0.15)"};
+  color: ${({ $type }) =>
+    $type === "work"
+      ? "#00ffe0"
+      : $type === "training"
+        ? "#38bdf8"
+        : "#c084fc"};
+  border: 1px solid
+    ${({ $type }) =>
+      $type === "work"
+        ? "rgba(0, 255, 224, 0.3)"
+        : $type === "training"
+          ? "rgba(14, 165, 233, 0.3)"
+          : "rgba(168, 85, 247, 0.3)"};
+`;
 
 const CompanyLinks = styled.div`
   display: flex;
   gap: 12px;
   margin-top: 20px;
+  flex-wrap: wrap;
 `;
 
 const CompanyLink = styled.a`
@@ -314,24 +367,75 @@ export default function Experience() {
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  const techStack = [
-    "Vue.js",
-    "Nuxt.js",
-    "Pinia",
-    "Naive UI",
-    "Monorepo",
-    "JavaScript",
-    "CSS / SCSS",
-    "REST APIs",
-    "Git",
-  ];
+  const experiences = [
+    {
+      id: "baridx",
+      type: "work",
+      typeLabel: "Full-Time Work Experience",
+      logo: "BX",
+      role: "Front-End Developer",
+      company: "Baridx — Last-Mile Delivery & Logistics",
+      period: "Nov 2025 — Jul 2026",
+      description:
+        "Developed and maintained features for an enterprise logistics platform using Vue 3 and Nuxt 4, working across the full front-end stack in a production environment.",
+      bullets: [
+        "Worked closely with backend APIs and databases across core business modules — OMS, shipments, invoices, finance, vendors, freight, and customer management — including debugging backend/data issues affecting the UI.",
+        "Built and maintained shared UI components with Naive UI inside a Turborepo monorepo managed with pnpm, and managed application state with Pinia, ensuring consistency and reusability across multiple applications.",
+        "Monitored and resolved production issues using Sentry, improving application stability and reliability.",
+        "Wrote automated end-to-end tests with Cypress to catch regressions and support safe, frequent releases.",
+      ],
+      techStack: [
+        "Vue 3",
+        "Nuxt 4",
+        "Pinia",
+        "Naive UI",
+        "Turborepo",
+        "pnpm",
+        "TypeScript",
+        "REST APIs",
+        "Cypress",
+        "Sentry",
+        "Git",
+      ],
+      links: [
+        { label: "baridx.com", url: "https://baridx.com/", type: "site" },
+        {
+          label: "LinkedIn",
+          url: "https://www.linkedin.com/company/baridx/",
+          type: "linkedin",
+        },
+      ],
+    },
 
+    {
+      id: "education",
+      type: "education",
+      typeLabel: "Education",
+      logo: "TU",
+      role: "Bachelor's Degree in Computer Science",
+      company: "Tanta University",
+      period: "Sep 2022 — Jun 2026",
+      description:
+        "Studied core computer science concepts with a focus on problem-solving, computational thinking, and software development principles.",
+      bullets: [
+        "Studied Data Structures, Algorithms, Object-Oriented Programming, and Software Engineering.",
+      ],
+      techStack: [
+        "Computer Science",
+        "Data Structures",
+        "Algorithms",
+        "OOP",
+        "Software Engineering",
+      ],
+      links: [],
+    },
+  ];
 
   return (
     <Section id="experience">
@@ -344,55 +448,60 @@ export default function Experience() {
         </button>
       </StyledWrapper>
 
-      <Container>
-        <TimelineItem ref={ref} $visible={visible}>
-          <TimelineDot />
-          <Card>
-            <CardHeader>
-              <CompanyLogo>BX</CompanyLogo>
-              <HeaderInfo>
-                <Role>Frontend Developer</Role>
-                <CompanyName>
-                  BaridX — Last-Mile Delivery & Logistics
-                </CompanyName>
-                <br />
-                <Period>Nov 2025 — Jul 2026</Period>
-              </HeaderInfo>
-            </CardHeader>
+      <Container ref={ref}>
+        {experiences.map((exp) => (
+          <TimelineItem key={exp.id} $visible={visible}>
+            <TimelineDot />
+            <Card>
+              <CardHeader>
+                <CompanyLogo>{exp.logo}</CompanyLogo>
+                <HeaderInfo>
+                  <TypeBadge $type={exp.type}>{exp.typeLabel}</TypeBadge>
+                  <Role>{exp.role}</Role>
+                  <CompanyName>{exp.company}</CompanyName>
+                  <br />
+                  <Period>{exp.period}</Period>
+                </HeaderInfo>
+              </CardHeader>
 
-            <Description>
-              Worked at <strong style={{ color: "#e2e8f0" }}>BaridX</strong>, a
-              leading Saudi logistics company redefining last-mile delivery
-              through innovation and technology. Built and maintained
-              enterprise-grade logistics management platforms using the Vue.js
-              ecosystem in a monorepo architecture.
-            </Description>
+              <Description>{exp.description}</Description>
 
-            <TechBadges>
-              {techStack.map((tech) => (
-                <Badge key={tech}>{tech}</Badge>
-              ))}
-            </TechBadges>
+              {exp.bullets && exp.bullets.length > 0 && (
+                <BulletList>
+                  {exp.bullets.map((bullet, idx) => (
+                    <li key={idx}>{bullet}</li>
+                  ))}
+                </BulletList>
+              )}
 
+              <TechBadges>
+                {exp.techStack.map((tech) => (
+                  <Badge key={tech}>{tech}</Badge>
+                ))}
+              </TechBadges>
 
-            <CompanyLinks>
-              <CompanyLink
-                href="https://baridx.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaExternalLinkAlt /> baridx.com
-              </CompanyLink>
-              <CompanyLink
-                href="https://www.linkedin.com/company/baridx/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin /> LinkedIn
-              </CompanyLink>
-            </CompanyLinks>
-          </Card>
-        </TimelineItem>
+              {exp.links && exp.links.length > 0 && (
+                <CompanyLinks>
+                  {exp.links.map((link) => (
+                    <CompanyLink
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.type === "linkedin" ? (
+                        <FaLinkedin />
+                      ) : (
+                        <FaExternalLinkAlt />
+                      )}
+                      {link.label}
+                    </CompanyLink>
+                  ))}
+                </CompanyLinks>
+              )}
+            </Card>
+          </TimelineItem>
+        ))}
       </Container>
     </Section>
   );

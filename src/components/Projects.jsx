@@ -2,7 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import Container from "./Container";
 import { FaHtml5, FaCss3, FaJs, FaBootstrap, FaReact } from "react-icons/fa";
-import { SiVite, SiFirebase } from "react-icons/si";
+import {
+  SiVite,
+  SiFirebase,
+  SiNextdotjs,
+  SiTypescript,
+  SiSupabase,
+  SiPostgresql,
+  SiTailwindcss,
+  SiTurborepo,
+} from "react-icons/si";
 const ProjectContainer = styled("div")`
   .continer {
     display: grid;
@@ -184,6 +193,142 @@ export default function Projects() {
         </button>
       </StyledWrapper>
       <Container className="continer">
+        <Project>
+          <div className="img-wrapper">
+            <img src="/AS-Platform-cover.png" alt="AS-Platform" />
+          </div>
+          <div className="content">
+            <div className="info">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "8px",
+                }}
+              >
+                <h3 style={{ margin: 0 }}>AS-Platform</h3>
+                <span
+                  style={{
+                    background: "rgba(0, 255, 224, 0.15)",
+                    color: "#00ffe0",
+                    border: "1px solid rgba(0, 255, 224, 0.35)",
+                    padding: "3px 10px",
+                    borderRadius: "12px",
+                    fontSize: "11px",
+                    fontWeight: "700",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Featured
+                </span>
+              </div>
+              <p>
+                Educational SaaS platform built as a Turborepo monorepo,
+                featuring separate Next.js applications for teachers and
+                students, with centralized authentication and role-based access
+                control.
+              </p>
+            </div>
+            <div className="icons">
+              <SiNextdotjs style={{ color: "#ffffff" }} title="Next.js" />
+              <FaReact style={{ color: "#61DAFB" }} title="React" />
+              <SiTypescript style={{ color: "#3178C6" }} title="TypeScript" />
+              <SiTailwindcss style={{ color: "#06B6D4" }} title="Tailwind CSS" />
+              <SiSupabase style={{ color: "#3ECF8E" }} title="Supabase" />
+              <SiPostgresql style={{ color: "#4169E1" }} title="PostgreSQL" />
+              <SiTurborepo style={{ color: "#EF4444" }} title="Turborepo" />
+            </div>
+            <div className="adv">
+              <p>Next.js (App Router & Route Handlers)</p>
+              <p>React & TypeScript</p>
+              <p>Turborepo Monorepo & pnpm Workspaces</p>
+              <p>Supabase Authentication & SSR</p>
+              <p>PostgreSQL & Row Level Security (RLS)</p>
+              <p>Role-Based Access Control (RBAC)</p>
+              <p>Tailwind CSS & Shadcn UI</p>
+              <p>React Hook Form & Zod Validation</p>
+              <p>Excel Bulk Student Import (.xlsx)</p>
+              <p>Reusable API Authentication (withAuth)</p>
+              <p>Separate Student Portal & Teacher Dashboard</p>
+            </div>
+            <Hr />
+            <Links>
+              <LinkButton
+                href="https://github.com/refaey3/AS"
+                target="_blank"
+                title="View on GitHub"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.55 11.13C3.19 11.13 3.55 11.59 3.68 11.86C4.36 12.54 5.21 12.35 5.61 12.14C5.74 11.53 6.05 11.13 6.39 10.92C4.98 10.71 3.53 10.13 3.53 7.61C3.53 6.84 3.74 6.22 4.11 5.71C4 5.53 3.78 4.93 4.17 3.84C4.17 3.84 4.71 3.61 5.61 4.41C6.18 4.25 6.79 4.17 7.4 4.17C8.01 4.17 8.62 4.25 9.19 4.41C10.09 3.61 10.63 3.84 10.63 3.84C11.02 4.93 10.8 5.53 10.69 5.71C11.06 6.22 11.27 6.84 11.27 7.61C11.27 10.13 9.8 10.71 8.39 10.92C8.76 11.16 9.02 11.62 9.02 12.36C9.02 13.27 9.01 14.03 9.01 14.21C9.01 14.42 9.16 15.66 9.56 15.59C12.74 14.53 15 11.54 15 8C15 3.58 11.42 0 7 0C8 0 8 0 8 0Z"
+                    fill="#e2e8f0"
+                  />
+                </svg>
+              </LinkButton>
+              <LinkButton
+                href="https://aboshady-delta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Student Site Demo"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                }}
+              >
+                <span style={{ fontSize: "11px", fontWeight: "700" }}>
+                  Student
+                </span>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                    fill="#e2e8f0"
+                  />
+                </svg>
+              </LinkButton>
+              <LinkButton
+                href="https://platform-as-team.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Teacher Portal Demo"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                }}
+              >
+                <span style={{ fontSize: "11px", fontWeight: "700" }}>
+                  Teacher
+                </span>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                    fill="#e2e8f0"
+                  />
+                </svg>
+              </LinkButton>
+            </Links>
+          </div>
+        </Project>
         <Project>
           <div className="img-wrapper">
             <img src="/IslamLife.jpeg" alt="Islam Life" />
